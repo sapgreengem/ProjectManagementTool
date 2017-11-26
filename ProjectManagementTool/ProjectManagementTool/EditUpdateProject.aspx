@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddProject.aspx.cs" Inherits="ProjectManagementTool.AddProject" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditUpdateProject.aspx.cs" Inherits="ProjectManagementTool.Edit_UpdateProject" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <h2>Add Project</h2>
+    <h2>Edit Project Informations</h2>
     <form id="form1" runat="server">
     <div>
     
@@ -40,9 +40,8 @@
                     <asp:Label ID="Label4" runat="server" Text="Possible Start Date"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-                    <asp:Button ID="Button2" runat="server" Text="Select" OnClick="Button2_Click" />
-                    <asp:Calendar ID="Calendar1" runat="server" Visible="false"></asp:Calendar>
+                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
                 </td>
             </tr>
             <tr>
@@ -50,9 +49,8 @@
                     <asp:Label ID="Label5" runat="server" Text="Possible End Date"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-                    <asp:Button ID="Button3" runat="server" Text="Select" OnClick="Button3_Click" />
-                    <asp:Calendar ID="Calendar2" runat="server" Visible="false"></asp:Calendar>
+                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                    <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
                 </td>
             </tr>
             <tr>
@@ -86,12 +84,13 @@
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" Text="Save" />
+                    <asp:Button ID="Button1" runat="server" Text="Edit" />
                 </td>
             </tr>
         </table>
     
     </div>
+
     </form>
 </body>
 </html>

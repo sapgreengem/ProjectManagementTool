@@ -108,6 +108,7 @@
   <ItemGroup>
     <Content Include="AddProject.aspx" />
     <Content Include="AddUser.aspx" />
+    <Content Include="EditUpdateProject.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Web.config" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="AddUser.aspx.designer.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUpdateProject.aspx.cs">
+      <DependentUpon>EditUpdateProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUpdateProject.aspx.designer.cs">
+      <DependentUpon>EditUpdateProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

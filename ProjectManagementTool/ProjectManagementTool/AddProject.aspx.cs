@@ -13,5 +13,29 @@ namespace ProjectManagementTool
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if (Calendar1.Visible == false)
+            {
+                Calendar1.Visible = true;
+            }
+            else
+            {
+                Calendar1.Visible = false;
+            }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            if (Calendar2.Visible == false)
+            {
+                Calendar2.Visible = true;
+            }
+            else
+            {
+                Calendar2.Visible = false;
+            }
+        }
     }
 }
