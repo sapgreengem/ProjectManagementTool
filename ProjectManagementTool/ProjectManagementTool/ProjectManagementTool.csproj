@@ -94,6 +94,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddComment.aspx" />
+    <Content Include="AddTask.aspx" />
+    <Content Include="AssignResourcePerson.aspx" />
+    <Content Include="ViewComment.aspx" />
+    <Content Include="ViewMyProjects.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -111,9 +116,17 @@
     <Content Include="EditUpdateProject.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="ProjectDetails.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddComment.aspx.cs">
+      <DependentUpon>AddComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddComment.aspx.designer.cs">
+      <DependentUpon>AddComment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddProject.aspx.cs">
       <DependentUpon>AddProject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,12 +134,26 @@
     <Compile Include="AddProject.aspx.designer.cs">
       <DependentUpon>AddProject.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddTask.aspx.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTask.aspx.designer.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddUser.aspx.designer.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignResourcePerson.aspx.cs">
+      <DependentUpon>AssignResourcePerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignResourcePerson.aspx.designer.cs">
+      <DependentUpon>AssignResourcePerson.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditUpdateProject.aspx.cs">
       <DependentUpon>EditUpdateProject.aspx</DependentUpon>
@@ -144,6 +171,27 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComment.aspx.cs">
+      <DependentUpon>ViewComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewComment.aspx.designer.cs">
+      <DependentUpon>ViewComment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMyProjects.aspx.cs">
+      <DependentUpon>ViewMyProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewMyProjects.aspx.designer.cs">
+      <DependentUpon>ViewMyProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDetails.aspx.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjectDetails.aspx.designer.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

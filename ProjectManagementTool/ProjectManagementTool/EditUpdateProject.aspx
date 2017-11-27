@@ -5,6 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 134px;
+        }
+    </style>
 </head>
 <body>
     <h2>Edit Project Informations</h2>
@@ -13,7 +18,7 @@
     
         <table style="width:100%;">
             <tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label1" runat="server" Text="Project Name"></asp:Label>
                 </td>
                 <td>
@@ -21,7 +26,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label2" runat="server" Text="Code Name"></asp:Label>
                 </td>
                 <td>
@@ -29,39 +34,41 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label3" runat="server" Text="Description"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
                 </td>
             </tr><tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label4" runat="server" Text="Possible Start Date"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                    <asp:TextBox ID="TextBox5" runat="server" Enabled="false"></asp:TextBox>
+                    <asp:Button ID="Button2" runat="server" Text="Select" OnClick="Button2_Click" />
+                    <asp:Calendar ID="Calendar1" runat="server" Visible="false"></asp:Calendar>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label5" runat="server" Text="Possible End Date"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-                    <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
+                    <asp:TextBox ID="TextBox6" runat="server" Enabled="false"></asp:TextBox>
+                    <asp:Button ID="Button3" runat="server" Text="Select" OnClick="Button3_Click" />
+                    <asp:Calendar ID="Calendar2" runat="server" Visible="false"></asp:Calendar>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label6" runat="server" Text="Duration(in Days)"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TextBox4" runat="server" Enabled="false"></asp:TextBox>
                 </td>
             </tr><tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label7" runat="server" Text="Upload File"></asp:Label>
                 </td>
                 <td>
@@ -69,7 +76,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="auto-style1">
                     <asp:Label ID="Label8" runat="server" Text="Status"></asp:Label>
                 </td>
                 <td>
@@ -82,7 +89,7 @@
                 </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <td class="auto-style1">&nbsp;</td>
                 <td>
                     <asp:Button ID="Button1" runat="server" Text="Edit" />
                 </td>
