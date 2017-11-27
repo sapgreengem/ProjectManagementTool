@@ -13,6 +13,10 @@
 </head>
 <body>
     <h2>Assign Resource Person</h2>
+    <div>
+        <a href="AddProject.aspx">Add Project</a>
+        <a href="ViewMyProjects.aspx">My Projects</a>
+    </div>
     <form id="form1" runat="server">
     <div>
         <table style="width: 100%;">

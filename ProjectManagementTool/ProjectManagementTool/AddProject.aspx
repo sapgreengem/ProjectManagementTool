@@ -13,6 +13,9 @@
 </head>
 <body>
     <h2>Add Project</h2>
+    <div>
+        <a href="AssignResourcePerson.aspx">Assign Person</a>
+    </div>
     <form id="form1" runat="server">
     <div>
     
