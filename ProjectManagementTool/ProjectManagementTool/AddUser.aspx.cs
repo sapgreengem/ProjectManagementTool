@@ -11,7 +11,24 @@ namespace ProjectManagementTool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            using (PMTDBContext context = new PMTDBContext())
+            {
+                IEnumerable<Designation> designation = context.Designations.ToList();
+                foreach (var item in designation)
+                {
+                    Response.Write(item.DesignationName +" "+item.DesignationID);
+                }
 
+                //foreach (var item in context.Designations.ToList())
+                //{
+                //    ListBox1.Items.Add(item.Designation1);
+                //}
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write(ListBox1.SelectedValue);
         }
     }
 }

@@ -11,7 +11,10 @@ namespace ProjectManagementTool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            using (PMTDBContext context = new PMTDBContext())
+            {
+                
+            }
         }
     }
 }

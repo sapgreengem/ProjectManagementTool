@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="095c6eda68d7425dafec31c79f69033e" Name="Diagram1">
+        <EntityTypeShape EntityType="PMTDBModel.Comment" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.Designation" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.Project" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.Task" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.User" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.UsersUnderProject" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PMTDBModel.FK_Comments_Tasks" ManuallyRouted="false" />
+        <AssociationConnector Association="PMTDBModel.FK_Comments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PMTDBModel.FK_Users_Designations" ManuallyRouted="false" />
+        <AssociationConnector Association="PMTDBModel.FK_Tasks_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="PMTDBModel.FK_UsersUnderProjects_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="PMTDBModel.FK_UsersUnderProjects_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

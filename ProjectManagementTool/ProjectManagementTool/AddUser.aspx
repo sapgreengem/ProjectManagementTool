@@ -51,20 +51,17 @@
                     <asp:Label ID="Label5" runat="server" Text="Designation"></asp:Label>
                 </td>
                 <td>
-                    <asp:ListBox ID="ListBox1" runat="server" Width="194px"></asp:ListBox>
+                    <asp:ListBox ID="ListBox1" runat="server" Width="407px"></asp:ListBox>
                 </td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" Text="Save" />
+                    <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" />
                 </td>
             </tr>
         </table>
         <asp:GridView ID="GridView1" runat="server">
-            <Columns>
-                <asp:CommandField AccessibleHeaderText="Action" />
-            </Columns>
         </asp:GridView>
     </div>
     </form>

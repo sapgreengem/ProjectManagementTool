@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +84,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -97,11 +107,28 @@
     <Content Include="AddComment.aspx" />
     <Content Include="AddTask.aspx" />
     <Content Include="AssignResourcePerson.aspx" />
+    <Content Include="PMTDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PMTDataModel.edmx</DependentUpon>
+      <LastGenOutput>PMTDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PMTDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PMTDataModel.edmx</DependentUpon>
+      <LastGenOutput>PMTDataModel.cs</LastGenOutput>
+    </Content>
     <Content Include="ViewComment.aspx" />
     <Content Include="ViewMyProjects.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="PMTDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PMTDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="PMTDataModel.edmx.diagram">
+      <DependentUpon>PMTDataModel.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -155,6 +182,12 @@
     <Compile Include="AssignResourcePerson.aspx.designer.cs">
       <DependentUpon>AssignResourcePerson.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Comment.cs">
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Designation.cs">
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EditUpdateProject.aspx.cs">
       <DependentUpon>EditUpdateProject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +204,36 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PMTDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMTDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMTDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMTDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMTDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Task.cs">
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersUnderProject.cs">
+      <DependentUpon>PMTDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewComment.aspx.cs">
       <DependentUpon>ViewComment.aspx</DependentUpon>
@@ -198,6 +261,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,167 @@
+USE [PMTDB]
+GO
+/****** Object:  Table [dbo].[Comments]    Script Date: 28-Nov-17 3:16:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Comments](
+	[CommentID] [int] IDENTITY(1,1) NOT NULL,
+	[Comment] [nvarchar](max) NULL,
+	[CommentDate] [datetime] NULL,
+	[TaskID] [int] NULL,
+	[UserID] [int] NULL,
+ CONSTRAINT [PK_Comments] PRIMARY KEY CLUSTERED 
+(
+	[CommentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Designations]    Script Date: 28-Nov-17 3:16:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Designations](
+	[DesignationID] [int] IDENTITY(1,1) NOT NULL,
+	[DesignationName] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Designations] PRIMARY KEY CLUSTERED 
+(
+	[DesignationID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Projects]    Script Date: 28-Nov-17 3:16:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Projects](
+	[ProjectID] [int] IDENTITY(1,1) NOT NULL,
+	[ProjectName] [nvarchar](max) NULL,
+	[CodeName] [nvarchar](max) NULL,
+	[Description] [nvarchar](max) NULL,
+	[StartDate] [datetime] NULL,
+	[EndDate] [datetime] NULL,
+	[Status] [nvarchar](max) NULL,
+	[FileName] [nvarchar](max) NULL,
+	[NumOfMember] [int] NULL,
+	[NumOfTask] [int] NULL,
+ CONSTRAINT [PK_Projects] PRIMARY KEY CLUSTERED 
+(
+	[ProjectID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Tasks]    Script Date: 28-Nov-17 3:16:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Tasks](
+	[TaskID] [int] IDENTITY(1,1) NOT NULL,
+	[TaskDescription] [nvarchar](max) NULL,
+	[DueDate] [datetime] NULL,
+	[Priority] [nvarchar](max) NULL,
+	[TaskAssignedTo] [nvarchar](max) NULL,
+	[TaskAssignedBy] [nvarchar](max) NULL,
+	[ProjectID] [int] NULL,
+ CONSTRAINT [PK_Tasks] PRIMARY KEY CLUSTERED 
+(
+	[TaskID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 28-Nov-17 3:16:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[UserID] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](max) NOT NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[Password] [nvarchar](max) NOT NULL,
+	[Status] [nvarchar](max) NOT NULL,
+	[DesignationID] [int] NOT NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[UserID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[UsersUnderProjects]    Script Date: 28-Nov-17 3:16:05 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UsersUnderProjects](
+	[AssignedID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID] [int] NULL,
+	[ProjectID] [int] NULL,
+ CONSTRAINT [PK_UsersUnderProjects] PRIMARY KEY CLUSTERED 
+(
+	[AssignedID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET IDENTITY_INSERT [dbo].[Designations] ON 
+
+GO
+INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (1, N'IT Admin')
+GO
+INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (2, N'Project Manager')
+GO
+INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (3, N'Team Lead')
+GO
+INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (4, N'Developer')
+GO
+INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (5, N'QA Engineer')
+GO
+INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (6, N'UX Engineer')
+GO
+SET IDENTITY_INSERT [dbo].[Designations] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+
+GO
+INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (1, N'ADMIN', N'admin@admin.com', N'admin', N'Active', 1)
+GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
+GO
+ALTER TABLE [dbo].[Comments]  WITH CHECK ADD  CONSTRAINT [FK_Comments_Tasks] FOREIGN KEY([TaskID])
+REFERENCES [dbo].[Tasks] ([TaskID])
+GO
+ALTER TABLE [dbo].[Comments] CHECK CONSTRAINT [FK_Comments_Tasks]
+GO
+ALTER TABLE [dbo].[Comments]  WITH CHECK ADD  CONSTRAINT [FK_Comments_Users] FOREIGN KEY([UserID])
+REFERENCES [dbo].[Users] ([UserID])
+GO
+ALTER TABLE [dbo].[Comments] CHECK CONSTRAINT [FK_Comments_Users]
+GO
+ALTER TABLE [dbo].[Tasks]  WITH CHECK ADD  CONSTRAINT [FK_Tasks_Projects] FOREIGN KEY([ProjectID])
+REFERENCES [dbo].[Projects] ([ProjectID])
+GO
+ALTER TABLE [dbo].[Tasks] CHECK CONSTRAINT [FK_Tasks_Projects]
+GO
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD  CONSTRAINT [FK_Users_Designations] FOREIGN KEY([DesignationID])
+REFERENCES [dbo].[Designations] ([DesignationID])
+GO
+ALTER TABLE [dbo].[Users] CHECK CONSTRAINT [FK_Users_Designations]
+GO
+ALTER TABLE [dbo].[UsersUnderProjects]  WITH CHECK ADD  CONSTRAINT [FK_UsersUnderProjects_Projects] FOREIGN KEY([ProjectID])
+REFERENCES [dbo].[Projects] ([ProjectID])
+GO
+ALTER TABLE [dbo].[UsersUnderProjects] CHECK CONSTRAINT [FK_UsersUnderProjects_Projects]
+GO
+ALTER TABLE [dbo].[UsersUnderProjects]  WITH CHECK ADD  CONSTRAINT [FK_UsersUnderProjects_Users] FOREIGN KEY([UserID])
+REFERENCES [dbo].[Users] ([UserID])
+GO
+ALTER TABLE [dbo].[UsersUnderProjects] CHECK CONSTRAINT [FK_UsersUnderProjects_Users]
+GO
