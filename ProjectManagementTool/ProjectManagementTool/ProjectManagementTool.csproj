@@ -44,11 +44,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\..\LayeredFundRaisingSystem\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\..\LayeredFundRaisingSystem\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -140,7 +140,6 @@
   <ItemGroup>
     <Content Include="AddProject.aspx" />
     <Content Include="AddUser.aspx" />
-    <Content Include="EditUpdateProject.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="ProjectDetails.aspx" />
@@ -188,13 +187,6 @@
     <Compile Include="Designation.cs">
       <DependentUpon>PMTDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EditUpdateProject.aspx.cs">
-      <DependentUpon>EditUpdateProject.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditUpdateProject.aspx.designer.cs">
-      <DependentUpon>EditUpdateProject.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,6 +197,8 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Join_Users_Designations.cs" />
+    <Compile Include="Join_User_Project_UserUnderProject.cs" />
     <Compile Include="PMTDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,9 +215,6 @@
       <DependentUpon>PMTDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Project.cs">
-      <DependentUpon>PMTDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>PMTDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Task.cs">

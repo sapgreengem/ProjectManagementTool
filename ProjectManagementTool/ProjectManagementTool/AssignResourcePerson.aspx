@@ -26,6 +26,7 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem Value="0">Select</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -35,13 +36,14 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem Value="0">Select</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" Text="Save" />
+                    <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" />
                 </td>
             </tr>
         </table>

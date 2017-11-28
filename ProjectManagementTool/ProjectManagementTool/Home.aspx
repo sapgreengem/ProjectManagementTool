@@ -17,10 +17,10 @@
         <table class="auto-style1">
             <tr>
                 <td>
-                    <asp:Label ID="Label1" runat="server" Text="User Name"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Email"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" TextMode="Email" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
