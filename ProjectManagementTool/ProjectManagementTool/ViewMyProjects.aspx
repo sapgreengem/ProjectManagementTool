@@ -12,7 +12,7 @@
     <div>
         <asp:GridView ID="GridView1" runat="server">
             <Columns>
-                <asp:BoundField DataField="ProjectID" HtmlEncode="False" DataFormatString="<a target='_blank' href='ProjectDetails.aspx?ProjectID={0}'>View Details</a>" HeaderText="Action" />
+                <asp:BoundField DataField="ProjectID" HtmlEncode="False" DataFormatString="<a href='ProjectDetails.aspx?ProjectID={0}'>View Details</a>" HeaderText="Action" />
             </Columns>
         </asp:GridView>
     </div>

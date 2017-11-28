@@ -105,6 +105,9 @@
                     <tr>
                         <td>
                             <asp:GridView ID="GridView2" runat="server">
+                                <Columns>
+                                    <asp:BoundField DataField="TaskID" HtmlEncode="False" DataFormatString="<a href='ViewComment.aspx?TaskID={0}'>View Comments</a>" HeaderText="Action" />
+                                </Columns>
                             </asp:GridView>
                         </td>
                     </tr>

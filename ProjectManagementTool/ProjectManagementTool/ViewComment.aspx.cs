@@ -11,7 +11,26 @@ namespace ProjectManagementTool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var value = Convert.ToInt32(Request.QueryString["TaskID"]);
+            if (value > 0 || Request.QueryString["TaskID"] != null)
+            {
+                using (PMTDBContext context = new PMTDBContext())
+                {
+                    Task task = context.Tasks.FirstOrDefault(a => a.TaskID == value);
+                    Task.Text = task.TaskDescription.ToString();
+                    ProjectName.Text = task.Project.ProjectName.ToString();
+                }
+                using (PMTDBContext context = new PMTDBContext())
+                {
+                    GridView1.DataSource = context.Comments.Where(a => a.TaskID == value).ToList();
+                    GridView1.DataBind();
+                }
+            }
+            else
+            {
+                Response.Write("URL ERROR");
+            }
+                
         }
     }
 }

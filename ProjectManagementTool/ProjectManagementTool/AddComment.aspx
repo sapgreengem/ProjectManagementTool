@@ -21,7 +21,8 @@
                     <asp:Label ID="Label1" runat="server" Text="Select Project"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
+                        <asp:ListItem Value="0">Select</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -31,6 +32,7 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem Value="0">Select</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -45,7 +47,7 @@
             <tr>
                 <td class="auto-style1">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" Text="Add Comment" />
+                    <asp:Button ID="Button1" runat="server" Text="Add Comment" OnClick="Button1_Click1" />
                 </td>
             </tr>
         </table>
