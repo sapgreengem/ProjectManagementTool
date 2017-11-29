@@ -18,13 +18,30 @@ namespace ProjectManagementTool
         {
             using (PMTDBContext context = new PMTDBContext())
             {
-                if (context.Users.Where(a => a.Email == TextBox1.Text.ToString() && a.Password == TextBox2.Text.ToString()).Where(a => a.DesignationID == 1).Count() == 1)
+                if (context.Users.Where(a => a.Email == TextBox1.Text.ToString()).Where(a=> a.Password == TextBox2.Text.ToString()).Count() == 1)
                 {
-                    Response.Redirect("/AddUser.aspx");
-                }
-                else if (context.Users.Where(a => a.Email == TextBox1.Text.ToString() && a.Password == TextBox2.Text.ToString()).Where(a => a.DesignationID != 1).Count() == 1)
-                {
-                    Response.Redirect("/ViewMyProjects.aspx");
+                    User user = context.Users.FirstOrDefault(a => a.Email == TextBox1.Text.ToString() && a.Password == TextBox2.Text.ToString());
+                    if (user.DesignationID == 1)
+                    {
+                        Session["UserLogin"] = user.UserID;
+                        Session["Designation"] = user.DesignationID;
+                        Session["UserName"] = user.UserName +" "+ user.Designation.DesignationName;
+                        Response.Redirect("/AddUser.aspx");
+                    }
+                    else if (user.DesignationID == 2)
+                    {
+                        Session["UserLogin"] = user.UserID;
+                        Session["Designation"] = user.DesignationID;
+                        Session["UserName"] = user.UserName + " " + user.Designation.DesignationName;
+                        Response.Redirect("/ViewMyProjects.aspx");
+                    }
+                    else if (user.DesignationID != 1)
+                    {
+                        Session["UserLogin"] = user.UserID;
+                        Session["Designation"] = user.DesignationID;
+                        Session["UserName"] = user.UserName + " " + user.Designation.DesignationName;
+                        Response.Redirect("/ViewMyProjects.aspx");
+                    }
                 }
                 else
                 {

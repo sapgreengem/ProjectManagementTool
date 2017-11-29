@@ -55,7 +55,7 @@ namespace ProjectManagementTool
                 comment.Comment1 = TextBox1.Text.ToString();
                 comment.CommentDate = DateTime.Now;
                 comment.TaskID = Convert.ToInt32(DropDownList2.SelectedValue);
-                comment.UserID = 3;
+                comment.UserID = Convert.ToInt32(Session["UserLogin"]);
                 context.Comments.Add(comment);
                 context.SaveChanges();
             }

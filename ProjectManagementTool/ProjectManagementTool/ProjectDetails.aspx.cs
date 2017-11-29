@@ -36,8 +36,10 @@ namespace ProjectManagementTool
                     GridView1.DataSource = user.Select(a=> new { a.UserName, a.Designation.DesignationName}).ToList();
                     GridView1.DataBind();
 
-                    GridView2.DataSource = context.Tasks.Select(a => new {a.TaskID, a.TaskDescription, a.TaskAssignedTo, a.Priority, a.TaskAssignedBy, a.DueDate, a.ProjectID }).Where(a=> a.ProjectID == value).ToList();
+                    GridView2.DataSource = context.Tasks.Where(a => a.ProjectID == value).Select(a => new {a.TaskDescription, a.TaskAssignedTo, a.Priority, a.TaskAssignedBy, a.DueDate, a.TaskID }).ToList();
                     GridView2.DataBind();
+                    Label10.Text = "Task List (Total:"+ context.Tasks.Where(a => a.ProjectID == value).Count() + ")";
+                    //context.Tasks.Where(a => a.ProjectID == value).Count();
                 }
             }
             else

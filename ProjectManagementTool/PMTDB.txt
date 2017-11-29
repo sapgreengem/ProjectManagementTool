@@ -1,6 +1,6 @@
 USE [PMTDB]
 GO
-/****** Object:  Table [dbo].[Comments]    Script Date: 11/28/2017 7:19:04 PM ******/
+/****** Object:  Table [dbo].[Comments]    Script Date: 11/29/2017 3:07:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[Comments](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Designations]    Script Date: 11/28/2017 7:19:04 PM ******/
+/****** Object:  Table [dbo].[Designations]    Script Date: 11/29/2017 3:07:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31,7 +31,7 @@ CREATE TABLE [dbo].[Designations](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Projects]    Script Date: 11/28/2017 7:19:04 PM ******/
+/****** Object:  Table [dbo].[Projects]    Script Date: 11/29/2017 3:07:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -53,7 +53,7 @@ CREATE TABLE [dbo].[Projects](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tasks]    Script Date: 11/28/2017 7:19:04 PM ******/
+/****** Object:  Table [dbo].[Tasks]    Script Date: 11/29/2017 3:07:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -72,7 +72,7 @@ CREATE TABLE [dbo].[Tasks](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 11/28/2017 7:19:04 PM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 11/29/2017 3:07:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UsersUnderProjects]    Script Date: 11/28/2017 7:19:05 PM ******/
+/****** Object:  Table [dbo].[UsersUnderProjects]    Script Date: 11/29/2017 3:07:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -117,57 +117,17 @@ INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (4, N'De
 GO
 INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (5, N'QA Engineer')
 GO
-INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (6, N'UX Engineer')
+INSERT [dbo].[Designations] ([DesignationID], [DesignationName]) VALUES (6, N'UX Designer')
 GO
 SET IDENTITY_INSERT [dbo].[Designations] OFF
 GO
-SET IDENTITY_INSERT [dbo].[Projects] ON 
-GO
-INSERT [dbo].[Projects] ([ProjectID], [ProjectName], [CodeName], [Description], [StartDate], [EndDate], [Status], [FileName], [NumOfMember], [NumOfTask]) VALUES (1, N'Any Poject', N'0011ggg', N'This Is a new Project', CAST(N'2017-11-03T00:00:00.000' AS DateTime), CAST(N'2017-11-17T00:00:00.000' AS DateTime), N'Completed', N'131563335629190984 New Text Document.txt', 0, 0)
-GO
-INSERT [dbo].[Projects] ([ProjectID], [ProjectName], [CodeName], [Description], [StartDate], [EndDate], [Status], [FileName], [NumOfMember], [NumOfTask]) VALUES (2, N'asedwd', N'ss', N'asdwqrwbwe w werfw', CAST(N'2017-12-01T00:00:00.000' AS DateTime), CAST(N'2017-12-09T00:00:00.000' AS DateTime), N'Not Started', N'131563370384063196 AkkharDescription.docx', 0, 0)
-GO
-INSERT [dbo].[Projects] ([ProjectID], [ProjectName], [CodeName], [Description], [StartDate], [EndDate], [Status], [FileName], [NumOfMember], [NumOfTask]) VALUES (3, N'jkljlkjl', N'23', N'dfgkp; pjfg kdjflk', CAST(N'2017-12-07T00:00:00.000' AS DateTime), CAST(N'2017-12-22T00:00:00.000' AS DateTime), N'Not Started', N'131563371817927507 About Mobile Application.pdf', 1, 0)
-GO
-SET IDENTITY_INSERT [dbo].[Projects] OFF
-GO
 SET IDENTITY_INSERT [dbo].[Users] ON 
 GO
-INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (1, N'ADMIN', N'admin@admin.com', N'admin', N'Active', 1)
-GO
-INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (3, N'gem', N'gem@gem.com', N'1212', N'Active', 3)
-GO
-INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (6, N'wewe', N'qw@a.c', N'as', N'Active', 4)
-GO
-INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (7, N'fff', N'reu@f.c', N'reu@f.c123', N'Active', 4)
-GO
-INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (8, N'ii', N'de@d.c', N'de@d.c123', N'Active', 3)
-GO
-INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (9, N'megaboygem', N'm@m.com', N'm@m.com123', N'Active', 5)
-GO
-INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (10, N'Sapgreen', N'sapgreengem@gmail.com', N'sapgreengem@gmail.com123', N'Active', 5)
+INSERT [dbo].[Users] ([UserID], [UserName], [Email], [Password], [Status], [DesignationID]) VALUES (1, N'Admin', N'admin@admin.com', N'admin', N'Active', 1)
 GO
 SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
-SET IDENTITY_INSERT [dbo].[UsersUnderProjects] ON 
-GO
-INSERT [dbo].[UsersUnderProjects] ([AssignedID], [UserID], [ProjectID]) VALUES (1, 9, 2)
-GO
-INSERT [dbo].[UsersUnderProjects] ([AssignedID], [UserID], [ProjectID]) VALUES (2, 7, 2)
-GO
-INSERT [dbo].[UsersUnderProjects] ([AssignedID], [UserID], [ProjectID]) VALUES (3, 3, 1)
-GO
-INSERT [dbo].[UsersUnderProjects] ([AssignedID], [UserID], [ProjectID]) VALUES (4, 7, 1)
-GO
-INSERT [dbo].[UsersUnderProjects] ([AssignedID], [UserID], [ProjectID]) VALUES (5, 10, 1)
-GO
-INSERT [dbo].[UsersUnderProjects] ([AssignedID], [UserID], [ProjectID]) VALUES (6, 10, 2)
-GO
-INSERT [dbo].[UsersUnderProjects] ([AssignedID], [UserID], [ProjectID]) VALUES (7, 8, 3)
-GO
-SET IDENTITY_INSERT [dbo].[UsersUnderProjects] OFF
-GO
-/****** Object:  Index [IX_Users]    Script Date: 11/28/2017 7:19:05 PM ******/
+/****** Object:  Index [IX_Users]    Script Date: 11/29/2017 3:07:14 PM ******/
 ALTER TABLE [dbo].[Users] ADD  CONSTRAINT [IX_Users] UNIQUE NONCLUSTERED 
 (
 	[UserID] ASC

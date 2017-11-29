@@ -12,10 +12,15 @@
     </style>
 </head>
 <body>
-    <h2>Add Project</h2>
+    <h1>Logged In as : <% Response.Write( Session["UserName"].ToString()); %></h1>
     <div>
         <a href="AssignResourcePerson.aspx">Assign Person</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="ViewMyProjects.aspx">My Projects</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/Logout.aspx">Logout</a>
     </div>
+    
+    <h2>Add Project</h2>
     <form id="form1" runat="server">
     <div>
     
@@ -104,7 +109,7 @@
     </div>
         <br />
         <h3>Projects List</h3>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProjectID" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProjectID" DataSourceID="SqlDataSource1" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
             <Columns>
                 <asp:BoundField DataField="ProjectID" HeaderText="ProjectID" SortExpression="ProjectID" InsertVisible="False" ReadOnly="True" Visible="False" />
                 <asp:BoundField DataField="ProjectName" HeaderText="ProjectName" SortExpression="ProjectName" />
@@ -118,6 +123,15 @@
                 <asp:BoundField DataField="NumOfTask" HeaderText="NumOfTask" InsertVisible="False" ReadOnly="true" SortExpression="NumOfTask" />
                 <asp:CommandField HeaderText="Action" ShowEditButton="True" />
             </Columns>
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+            <RowStyle BackColor="White" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PMTDBConnectionString %>" DeleteCommand="DELETE FROM [Projects] WHERE [ProjectID] = @ProjectID" InsertCommand="INSERT INTO [Projects] ([ProjectName], [CodeName], [Description], [StartDate], [EndDate], [Status], [FileName], [NumOfMember], [NumOfTask]) VALUES (@ProjectName, @CodeName, @Description, @StartDate, @EndDate, @Status, @FileName, @NumOfMember, @NumOfTask)" SelectCommand="SELECT * FROM [Projects]" UpdateCommand="UPDATE [Projects] SET [ProjectName] = @ProjectName, [CodeName] = @CodeName, [Description] = @Description, [StartDate] = @StartDate, [EndDate] = @EndDate, [Status] = @Status, [FileName] = @FileName, [NumOfMember] = @NumOfMember, [NumOfTask] = @NumOfTask WHERE [ProjectID] = @ProjectID">
             <DeleteParameters>

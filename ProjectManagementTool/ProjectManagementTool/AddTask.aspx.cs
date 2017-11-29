@@ -79,6 +79,8 @@ namespace ProjectManagementTool
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            int userId = Convert.ToInt32(Session["UserLogin"]);
+            int ProjectId = Convert.ToInt32(DropDownList1.SelectedValue);
             using (PMTDBContext context = new PMTDBContext())
             {
                 Task task = new Task();
@@ -88,10 +90,14 @@ namespace ProjectManagementTool
                 task.TaskAssignedTo = DropDownList2.SelectedItem.Text.ToString();
                 task.ProjectID = Convert.ToInt32(DropDownList1.SelectedValue);
 
-                User user = context.Users.FirstOrDefault(a => a.UserID == 3);
+                User user = context.Users.FirstOrDefault(a => a.UserID == userId);
                 task.TaskAssignedBy = user.UserName.ToString();
 
                 context.Tasks.Add(task);
+                context.SaveChanges();
+
+                Project project = context.Projects.SingleOrDefault(a => a.ProjectID == ProjectId);
+                project.NumOfTask += 1;
                 context.SaveChanges();
             }
             Response.Redirect("~/ProjectDetails.aspx?ProjectID="+DropDownList1.SelectedValue.ToString());

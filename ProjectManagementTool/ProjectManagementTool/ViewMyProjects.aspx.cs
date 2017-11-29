@@ -11,16 +11,17 @@ namespace ProjectManagementTool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int userId = Convert.ToInt32(Session["UserLogin"]);
             using (PMTDBContext context = new PMTDBContext())
             {
-                IEnumerable<UsersUnderProject> usersUnderProject = context.UsersUnderProjects.Where(a => a.UserID == 10).ToList();
+                IEnumerable<UsersUnderProject> usersUnderProject = context.UsersUnderProjects.Where(a => a.UserID == userId).ToList();
                 List<Project> project = new List<Project>();
                 foreach (var item in usersUnderProject)
                 {
                     Project projectData = context.Projects.FirstOrDefault(a => a.ProjectID == item.ProjectID);
                     project.Add(projectData);
                 }
-                GridView1.DataSource = project.Select(a=> new {a.ProjectID, a.ProjectName, a.Description, a.StartDate, a.EndDate, a.Status, a.NumOfMember, a.NumOfTask }).ToList();
+                GridView1.DataSource = project.Select(a=> new {a.ProjectName, a.Description, a.StartDate, a.EndDate, a.Status, a.NumOfMember, a.NumOfTask, a.ProjectID }).ToList();
                 GridView1.DataBind();
             }
         }

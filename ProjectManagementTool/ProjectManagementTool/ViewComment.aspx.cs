@@ -22,8 +22,9 @@ namespace ProjectManagementTool
                 }
                 using (PMTDBContext context = new PMTDBContext())
                 {
-                    GridView1.DataSource = context.Comments.Where(a => a.TaskID == value).ToList();
+                    GridView1.DataSource = context.Comments.Where(a => a.TaskID == value).Select(a => new { a.Comment1, a.CommentDate }).ToList();
                     GridView1.DataBind();
+                    Label3.Text = "Comments (Total: "+ context.Comments.Where(a => a.TaskID == value).Count() + ")";
                 }
             }
             else
