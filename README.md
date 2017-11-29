@@ -1,8 +1,8 @@
 # ProjectManagementTool
 Project Management Tool for Managing Software Projects
 <br>
-The Database Schema with seed data Included
+1. The Database Schema with seed data Included
 <br>
-Schema diagram added in png format
+2. Schema diagram added in png format
 <br>
-Gap Areas included
+3. Gap Areas included
