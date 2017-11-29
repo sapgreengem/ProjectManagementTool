@@ -34,6 +34,7 @@ namespace ProjectManagementTool
                     context.Users.Add(user);
                     context.SaveChanges();
                 }
+                Response.Redirect("/AddUser.aspx");
             }
             else
             {
