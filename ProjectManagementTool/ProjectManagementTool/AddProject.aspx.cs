@@ -70,8 +70,8 @@ namespace ProjectManagementTool
                         project.NumOfTask = 0;
                         context.Projects.Add(project);
                         context.SaveChanges();
-                        Response.Redirect("~/AddProject.aspx");
                     }
+                    Response.Redirect("~/AddProject.aspx");
                 }
                 else
                 {

@@ -26,29 +26,27 @@ namespace ProjectManagementTool
                         Session["UserLogin"] = user.UserID;
                         Session["Designation"] = user.DesignationID;
                         Session["UserName"] = user.UserName +" "+ user.Designation.DesignationName;
-                        Response.Redirect("/AddUser.aspx");
+                        Response.Redirect("/AddUser.aspx", false);
                     }
                     else if (user.DesignationID == 2)
                     {
                         Session["UserLogin"] = user.UserID;
                         Session["Designation"] = user.DesignationID;
                         Session["UserName"] = user.UserName + " " + user.Designation.DesignationName;
-                        Response.Redirect("/ViewMyProjects.aspx");
+                        Response.Redirect("/ViewMyProjects.aspx", false);
                     }
                     else if (user.DesignationID != 1)
                     {
                         Session["UserLogin"] = user.UserID;
                         Session["Designation"] = user.DesignationID;
                         Session["UserName"] = user.UserName + " " + user.Designation.DesignationName;
-                        Response.Redirect("/ViewMyProjects.aspx");
+                        Response.Redirect("/ViewMyProjects.aspx",false);
                     }
                 }
                 else
                 {
                     Response.Write("Wrong Email or Password");
                 }
-
-                //context.Users.Where(a => a.Email == TextBox1.Text.ToString() && a.Password == TextBox2.Text.ToString()).Where(a => a.DesignationID == 1);
             }
         }
     }

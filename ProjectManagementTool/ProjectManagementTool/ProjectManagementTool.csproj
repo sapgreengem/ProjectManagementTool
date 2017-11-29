@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -107,6 +108,7 @@
     <Content Include="AddComment.aspx" />
     <Content Include="AddTask.aspx" />
     <Content Include="AssignResourcePerson.aspx" />
+    <Content Include="EditUser.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="PMTDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -118,6 +120,7 @@
       <DependentUpon>PMTDataModel.edmx</DependentUpon>
       <LastGenOutput>PMTDataModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Reports.aspx" />
     <Content Include="ViewComment.aspx" />
     <Content Include="ViewMyProjects.aspx" />
     <Content Include="packages.config" />
@@ -188,6 +191,13 @@
     <Compile Include="Designation.cs">
       <DependentUpon>PMTDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +234,13 @@
     </Compile>
     <Compile Include="Project.cs">
       <DependentUpon>PMTDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Task.cs">
       <DependentUpon>PMTDataModel.tt</DependentUpon>

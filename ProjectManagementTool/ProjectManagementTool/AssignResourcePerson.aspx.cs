@@ -35,7 +35,8 @@ namespace ProjectManagementTool
                     Project project = context.Projects.SingleOrDefault(a => a.ProjectID == ProjectId);
                     project.NumOfMember += 1;
                     context.SaveChanges();
-                } 
+                }
+                Response.Redirect("/AssignResourcePerson.aspx");
             }
             else
             {

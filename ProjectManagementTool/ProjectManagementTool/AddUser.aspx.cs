@@ -70,6 +70,7 @@ namespace ProjectManagementTool
                 {
                     Join_Users_Designations addData = new Join_Users_Designations()
                     {
+                        UserID = item.UserID,
                         UserName = item.UserName,
                         Email = item.Email,
                         Status = item.Status,
@@ -84,16 +85,17 @@ namespace ProjectManagementTool
 
         protected void TextBoxEmail_TextChanged(object sender, EventArgs e)
         {
+            ListBox1.Items.Clear();
             using (PMTDBContext context = new PMTDBContext())
             {
                 if (context.Users.Where(a=> a.Email == TextBoxEmail.Text).Count() > 0)
                 {
                     Label6.Text = "Email already Exists";
-                    //Response.Write("Email already Exists");
                 }
                 else
                 {
                     TextBoxPassword.Text = TextBoxEmail.Text.ToString() + 123;
+                    this.loadDesignations();
                 }
             }
         }
