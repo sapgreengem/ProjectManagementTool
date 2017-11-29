@@ -9,6 +9,9 @@
         .auto-style1 {
             width: 132px;
         }
+        .auto-style2 {
+            margin-right: 0px;
+        }
     </style>
 </head>
 <body>
@@ -109,7 +112,7 @@
     </div>
         <br />
         <h3>Projects List</h3>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProjectID" DataSourceID="SqlDataSource1" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ProjectID" DataSourceID="SqlDataSource1" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" CssClass="auto-style2">
             <Columns>
                 <asp:BoundField DataField="ProjectID" HeaderText="ProjectID" SortExpression="ProjectID" InsertVisible="False" ReadOnly="True" Visible="False" />
                 <asp:BoundField DataField="ProjectName" HeaderText="ProjectName" SortExpression="ProjectName" />
@@ -118,9 +121,9 @@
                 <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
                 <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                <asp:BoundField DataField="FileName" HeaderText="FileName" InsertVisible="False" SortExpression="FileName" />
-                <asp:BoundField DataField="NumOfMember" HeaderText="NumOfMember" InsertVisible="False" ReadOnly="true" SortExpression="NumOfMember" />
-                <asp:BoundField DataField="NumOfTask" HeaderText="NumOfTask" InsertVisible="False" ReadOnly="true" SortExpression="NumOfTask" />
+                <asp:BoundField DataField="FileName" HeaderText="FileName" SortExpression="FileName"/>
+                <asp:BoundField DataField="NumOfMember" HeaderText="NumOfMember" SortExpression="NumOfMember"/>
+                <asp:BoundField DataField="NumOfTask" HeaderText="NumOfTask" SortExpression="NumOfTask"/>
                 <asp:CommandField HeaderText="Action" ShowEditButton="True" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />

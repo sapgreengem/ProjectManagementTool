@@ -12,11 +12,7 @@ namespace ProjectManagementTool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //using (PMTDBContext context = new PMTDBContext())
-            //{
-            //    GridView1.DataSource = context.Projects.ToList();
-            //    GridView1.DataBind();
-            //}
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
