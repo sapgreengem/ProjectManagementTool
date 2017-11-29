@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="33b33ec6eb264a3b8a897c6a58e729ba" Name="Diagram1">
-        <EntityTypeShape EntityType="PMTDBModel.Comment" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMTDBModel.Designation" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMTDBModel.Project" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMTDBModel.Task" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMTDBModel.User" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMTDBModel.UsersUnderProject" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="33b33ec6eb264a3b8a897c6a58e729ba" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="PMTDBModel.Comment" Width="1.5" PointX="7.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.Designation" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.Project" Width="1.5" PointX="3.625" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.Task" Width="1.5" PointX="7" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.User" Width="1.5" PointX="4.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMTDBModel.UsersUnderProject" Width="1.5" PointX="0.625" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="PMTDBModel.FK_Comments_Tasks" ManuallyRouted="false" />
         <AssociationConnector Association="PMTDBModel.FK_Comments_Users" ManuallyRouted="false" />
         <AssociationConnector Association="PMTDBModel.FK_Users_Designations" ManuallyRouted="false" />
